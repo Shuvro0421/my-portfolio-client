@@ -1,13 +1,15 @@
 import { useState, useRef, useEffect } from 'react';
 import Home from '../Home/Home';
 import Projects from '../Projects/Projects';
-import { FaCaretLeft, FaCaretRight } from "react-icons/fa";
+import { FaCaretLeft, FaCaretRight, FaCaretUp } from "react-icons/fa";
 
 const Body = () => {
   const [activeLink, setActiveLink] = useState(null);
   const homeRef = useRef(null);
   const projectsRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false)
+  const [isNavbarScrolled, setIsNavbarScrolled] = useState(false);
+  const [isAtTop, setIsAtTop] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +26,12 @@ const Body = () => {
       } else {
         setActiveLink(null);
       }
+
+      // Change navbar background color when scrolling down to 100px
+      setIsNavbarScrolled(scrollPosition >= 100);
+
+      // Check if the scroll position is at the top
+      setIsAtTop(scrollPosition <= 500);
     };
 
     // Attach the scroll event listener
@@ -51,6 +59,10 @@ const Body = () => {
     setIsOpen(!isOpen)
   }
 
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const links = [
     'Home',
     'Projects',
@@ -65,7 +77,7 @@ const Body = () => {
     <div>
       {/* navbar lg , md */}
       <div>
-        <ul className={`md:flex hidden items-center bg-gray-500 bg-opacity-10  fixed top-0 backdrop-blur-md w-full justify-center p-5 gap-5 font-semibold text-sm`}>
+        <ul className={`md:flex hidden items-center ${isNavbarScrolled ? 'bg-gray-500 bg-opacity-10 ease-in-out duration-300' : ''}  fixed top-0 backdrop-blur-md w-full justify-center p-5 gap-5 font-semibold text-sm`}>
           {links.map((link, index) => (
             <li
               key={index}
@@ -80,7 +92,7 @@ const Body = () => {
 
       {/* navbar small */}
       <div className='md:hidden block'>
-        <div onClick={handleIsOpen} className=' z-10  top-1/2 fixed right-0'>
+        <div onClick={handleIsOpen} className=' z-30  top-1/2 fixed right-0'>
           {
             !isOpen ? <FaCaretLeft className='text-2xl text-purple-500' /> : <FaCaretRight className='text-2xl text-purple-500' />
           }
@@ -89,7 +101,7 @@ const Body = () => {
           isOpen &&
 
           <div>
-            <ul className={`flex flex-col  items-center fixed top-0 right-0 w-2/3  backdrop-blur-md bg-gray-500 bg-opacity-10 h-full justify-center  gap-5 font-semibold text-sm`}>
+            <ul className={`flex flex-col  items-center fixed top-0 right-0 w-2/3 ease-in-out duration-300  backdrop-blur-md bg-gray-500 bg-opacity-10 h-full justify-center z-20 gap-5 font-semibold text-sm`}>
               {links.map((link, index) => (
                 <li
                   key={index}
@@ -103,6 +115,21 @@ const Body = () => {
           </div>
         }
       </div>
+
+      {/* Scroll to Top Button */}
+      <div>
+        {!isAtTop && (
+          <div className="fixed bottom-4 right-4">
+            <button
+              onClick={handleScrollToTop}
+              className=" md:text-2xl text-lg  md:p-3 p-2 rounded-full  bg-purple-500 text-gray-200   cursor-pointer"
+            >
+              <FaCaretUp></FaCaretUp>
+            </button>
+          </div>
+        )}
+      </div>
+
 
       <div className='md:px-20 px-12'>
         {/* Home */}
