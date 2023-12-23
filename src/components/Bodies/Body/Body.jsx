@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import Home from '../Home/Home';
 import Projects from '../Projects/Projects';
 import { FaCaretLeft, FaCaretRight, FaCaretUp } from "react-icons/fa";
+import Footer from '../Footer/Footer';
 
 const Body = () => {
   const [activeLink, setActiveLink] = useState(null);
@@ -74,64 +75,66 @@ const Body = () => {
   ];
 
   return (
-    <div>
-      {/* navbar lg , md */}
-      <div>
-        <ul className={`md:flex hidden items-center ${isNavbarScrolled ? 'bg-gray-500 bg-opacity-10 ease-in-out duration-300' : ''}  fixed top-0 backdrop-blur-md w-full justify-center p-5 gap-5 font-semibold text-sm`}>
-          {links.map((link, index) => (
-            <li
-              key={index}
-              onClick={() => handleLinkClick(index)}
-              className={activeLink === index ? 'text-purple-500 cursor-pointer ' : 'cursor-pointer'}
-            >
-              {link}
-            </li>
-          ))}
-        </ul>
-      </div>
+    <div className='flex flex-col min-h-screen'>
 
-      {/* navbar small */}
-      <div className='md:hidden block'>
-        <div onClick={handleIsOpen} className=' z-30  top-1/2 fixed right-0'>
+      <div>
+        {/* navbar lg , md */}
+        <div>
+          <ul className={`md:flex z-10 hidden items-center ${isNavbarScrolled ? 'bg-gray-500 bg-opacity-10 ease-in-out duration-300' : ''}  fixed top-0 backdrop-blur-md w-full justify-center p-5 gap-5  text-sm`}>
+            {links.map((link, index) => (
+              <li
+                key={index}
+                onClick={() => handleLinkClick(index)}
+                className={activeLink === index ? 'text-purple-500 cursor-pointer ' : 'cursor-pointer'}
+              >
+                {link}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* navbar small */}
+        <div className='md:hidden block'>
+          <div onClick={handleIsOpen} className=' z-30  top-1/2 fixed right-0'>
+            {
+              !isOpen ? <FaCaretLeft className='text-2xl text-purple-500' /> : <FaCaretRight className='text-2xl text-purple-500' />
+            }
+          </div>
           {
-            !isOpen ? <FaCaretLeft className='text-2xl text-purple-500' /> : <FaCaretRight className='text-2xl text-purple-500' />
+            isOpen &&
+
+            <div>
+              <ul className={`flex flex-col  items-center fixed top-0 right-0 w-2/3 ease-in-out duration-300  backdrop-blur-md bg-gray-500 bg-opacity-10 h-full justify-center z-20 gap-5  text-sm`}>
+                {links.map((link, index) => (
+                  <li
+                    key={index}
+                    onClick={() => handleLinkClick(index)}
+                    className={activeLink === index ? 'text-purple-500 cursor-pointer' : 'cursor-pointer'}
+                  >
+                    {link}
+                  </li>
+                ))}
+              </ul>
+            </div>
           }
         </div>
-        {
-          isOpen &&
 
-          <div>
-            <ul className={`flex flex-col  items-center fixed top-0 right-0 w-2/3 ease-in-out duration-300  backdrop-blur-md bg-gray-500 bg-opacity-10 h-full justify-center z-20 gap-5 font-semibold text-sm`}>
-              {links.map((link, index) => (
-                <li
-                  key={index}
-                  onClick={() => handleLinkClick(index)}
-                  className={activeLink === index ? 'text-purple-500 cursor-pointer' : 'cursor-pointer'}
-                >
-                  {link}
-                </li>
-              ))}
-            </ul>
-          </div>
-        }
+        {/* Scroll to Top Button */}
+        <div>
+          {!isAtTop && (
+            <div className="fixed bottom-4 right-4">
+              <button
+                onClick={handleScrollToTop}
+                className=" md:text-2xl text-lg  md:p-3 p-2 rounded-full  bg-purple-500 text-gray-200   cursor-pointer"
+              >
+                <FaCaretUp></FaCaretUp>
+              </button>
+            </div>
+          )}
+        </div>
       </div>
 
-      {/* Scroll to Top Button */}
-      <div>
-        {!isAtTop && (
-          <div className="fixed bottom-4 right-4">
-            <button
-              onClick={handleScrollToTop}
-              className=" md:text-2xl text-lg  md:p-3 p-2 rounded-full  bg-purple-500 text-gray-200   cursor-pointer"
-            >
-              <FaCaretUp></FaCaretUp>
-            </button>
-          </div>
-        )}
-      </div>
-
-
-      <div className='md:px-20 px-12'>
+      <div className='md:px-20 px-12 flex-1'>
         {/* Home */}
         <div className='md:pt-20 pt-10' ref={homeRef}>
           <Home />
@@ -143,7 +146,12 @@ const Body = () => {
         </div>
         {/* Add more sections with refs as needed */}
       </div>
+      {/* footer */}
+      <div>
+        <Footer></Footer>
+      </div>
     </div>
+
   );
 };
 

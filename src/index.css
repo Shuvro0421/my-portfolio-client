@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* scrollbar start */
 ::-webkit-scrollbar {
     width: 7px; /* Set the width of the scrollbar */
 }
@@ -32,3 +34,28 @@
     scrollbar-color: rgba(136, 136, 136, 0.5) transparent;
     border-radius: 20px;
 }
+
+/* scrollbar end */
+
+/* portfolio effect start  */
+
+
+  
+.effect {
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #8B5CF6, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+}
+  
+@keyframes gradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+/* portfolio effect end  */
