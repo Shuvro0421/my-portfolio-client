@@ -104,7 +104,7 @@ const Body = () => {
             isOpen &&
 
             <div>
-              <ul className={`flex flex-col  items-center fixed top-0 right-0 w-2/3 ease-in-out duration-300  backdrop-blur-md bg-gray-500 bg-opacity-10 h-full justify-center z-20 gap-5  text-sm`}>
+              <ul className={`flex flex-col justify-center  items-center fixed top-0 right-0 w-2/3   backdrop-blur-md bg-gray-500 bg-opacity-10 h-full  z-20 gap-5  text-sm`}>
                 {links.map((link, index) => (
                   <li
                     key={index}
@@ -125,7 +125,7 @@ const Body = () => {
             <div className="fixed bottom-4 right-4">
               <button
                 onClick={handleScrollToTop}
-                className=" md:text-2xl text-lg  md:p-3 p-2 rounded-full  bg-purple-500 text-gray-200   cursor-pointer"
+                className=" md:text-2xl text-lg bg-opacity-65 md:p-3 p-2 rounded-full  bg-purple-500 text-gray-200   cursor-pointer"
               >
                 <FaCaretUp></FaCaretUp>
               </button>
@@ -134,7 +134,8 @@ const Body = () => {
         </div>
       </div>
 
-      <div className='md:px-20 px-12 flex-1'>
+      {/* Body */}
+      <div className='md:px-20 px-12 flex-1 mb-10'>
         {/* Home */}
         <div className='md:pt-20 pt-10' ref={homeRef}>
           <Home />
