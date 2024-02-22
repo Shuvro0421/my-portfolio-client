@@ -113,7 +113,7 @@ const Body = () => {
             isOpen &&
 
             <div>
-              <ul className={`flex flex-col justify-center  items-center fixed top-0 right-0 w-2/3   backdrop-blur-md bg-gray-500 bg-opacity-10 h-full  z-20 gap-5  text-sm`}>
+              <ul className={`flex flex-col justify-center text-white items-center fixed top-0 right-0 w-2/3   backdrop-blur-md bg-gray-500 bg-opacity-10 h-full  z-20 gap-5  text-sm`}>
                 {links.map((link, index) => (
                   <li
                     key={index}
