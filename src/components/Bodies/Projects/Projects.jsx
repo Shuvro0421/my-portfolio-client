@@ -1,14 +1,57 @@
+import { useEffect } from "react";
+import { useState } from "react";
 import HeaderTitle from "../../HeaderTitle/HeaderTitle";
+import { FaCode } from "react-icons/fa6";
+import { Link } from "react-router-dom";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 
 
 const Projects = () => {
+    const [projects, setProjects] = useState([])
+
+    useEffect(() => {
+        fetch('/projects.json')
+            .then(res => res.json())
+            .then(data => setProjects(data))
+    }, [])
+
+
+    useEffect(() => {
+        AOS.init({ duration: 1000 })
+    }, [])
+
     return (
         <div>
-            <div>
-                <HeaderTitle heading={'Projects'}></HeaderTitle>
-                <h1 className="text-justify">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique praesentium porro quaerat neque pariatur nulla placeat vel vero eos quam sapiente, eligendi cupiditate recusandae impedit officiis exercitationem autem perspiciatis quod. Ab, sunt officia quaerat provident odio magnam sapiente sequi quis? Ab sint illum nemo voluptates, deleniti officiis ea numquam excepturi odit esse asperiores, necessitatibus, sit placeat unde reiciendis ex atque rerum aspernatur ullam eos porro! Aliquid officia similique magnam, necessitatibus distinctio, eveniet repellendus, iure cum aliquam voluptate quod! Sit incidunt, quod maiores optio ducimus voluptates quae tenetur eligendi quis, quo ut labore necessitatibus cupiditate voluptatibus dolores illum dicta delectus alias non autem aspernatur. Eveniet explicabo rem reprehenderit ullam porro illum nihil eaque sit maiores magni doloremque architecto nostrum, nulla animi impedit, quos molestias aperiam ipsa at voluptate? Rerum architecto laboriosam illum sunt voluptatibus ullam, rem nihil nobis consequatur veritatis natus dicta beatae maiores iste nostrum veniam a modi eveniet alias vel quisquam ab? Aperiam repellat inventore similique fugiat ab rerum, tempora facilis corporis facere officia odio dignissimos molestias ipsa, et minus nihil nulla? Quam eligendi dolorum illum architecto perferendis quo excepturi officiis optio! Laboriosam perferendis repellendus minima nihil obcaecati maiores beatae ratione iure ab repellat corporis nisi sunt, magni omnis ipsa expedita, autem laudantium inventore nesciunt aliquid nobis. Deleniti enim, doloribus necessitatibus accusamus in repudiandae eos aspernatur omnis, dolore, eaque ex vitae voluptas adipisci tenetur ipsam non aperiam dolor magni saepe consequatur iusto! Veniam eveniet neque odit temporibus quasi in hic architecto, iste mollitia aliquam saepe quibusdam magnam debitis a delectus iusto numquam inventore distinctio, enim, reiciendis sint ratione asperiores? Cumque a reprehenderit pariatur reiciendis temporibus sapiente explicabo eaque repudiandae? Neque, expedita ullam! Molestias cupiditate earum repellendus dicta natus commodi enim dolor ex, ullam praesentium obcaecati repellat laboriosam delectus sed voluptas neque, nihil laborum id suscipit nisi asperiores debitis. Labore, obcaecati dolor vitae aut laboriosam eum quae libero perferendis, at eaque aliquam modi nemo cupiditate sapiente iste totam sit perspiciatis saepe animi quam ratione ipsam impedit quos. Voluptatum cumque, ex alias distinctio quo tempora dolore, modi tenetur iusto nam recusandae ipsa illo maiores esse. Quae rem reiciendis vel dolor eos ab reprehenderit voluptate eveniet pariatur soluta? A vero quia error cum labore delectus iure consequuntur ratione laboriosam totam, praesentium repellat pariatur quod alias? Blanditiis ipsam dolores, accusamus voluptatum quo quia nulla praesentium ullam ad nesciunt ab non, porro esse nam quasi reprehenderit expedita maiores ratione architecto iusto tempore fugiat laboriosam aperiam impedit. Repellat odit, nisi voluptate, esse magnam iure sequi, minus quod accusamus consectetur dolore quia. Deserunt corrupti recusandae est pariatur, eos ab non, cumque voluptates totam expedita illo mollitia fugiat sequi repellendus in beatae, animi incidunt nam omnis! Est fuga expedita voluptas suscipit vel animi deleniti maiores et dignissimos officia, ratione maxime consectetur doloribus iste illum iure, amet asperiores unde placeat sit. Deleniti recusandae distinctio at, unde veniam inventore, corrupti officia culpa voluptate ipsum quaerat, aliquam ducimus perferendis? Dolores deserunt non iusto quisquam illum? Molestias ab commodi et quod quidem ullam quasi. Itaque facilis quis maxime sit, voluptatum officia praesentium iste, aperiam consectetur suscipit quas. Quisquam explicabo numquam nesciunt, tempore reprehenderit blanditiis deleniti minus est. Deleniti modi consequuntur numquam adipisci provident asperiores! Dolores, quas asperiores earum, enim ea exercitationem fugit, sed officia esse laboriosam assumenda possimus iure debitis porro eaque repellat provident perspiciatis necessitatibus iste vel odit! Non, aut nemo labore sit autem minus culpa repellat, eligendi saepe sed, eveniet quia ducimus incidunt accusantium molestiae quam ad! Aspernatur dolorum nihil ex error odio laboriosam beatae amet reiciendis iste, laborum libero saepe, nam quisquam odit molestias rerum eveniet dolorem quibusdam incidunt ab est voluptatibus. Voluptatibus iusto illum laborum repellendus delectus? Totam labore doloribus, necessitatibus asperiores, et dolorem esse eveniet laudantium ab voluptates enim quos consequatur facere voluptatibus debitis corporis aspernatur omnis dolor ipsum nihil dolorum, assumenda porro. Culpa dolor nisi veritatis consequatur suscipit, tenetur voluptates molestiae ipsa rem sequi maiores, expedita nesciunt fugit aspernatur earum, placeat laudantium voluptate aperiam odit qui provident commodi. Nostrum quia aperiam, laboriosam inventore quibusdam illo iste architecto est laudantium temporibus impedit ullam dolor ea dolores, repudiandae iusto consequuntur libero quo adipisci accusamus, incidunt praesentium eum voluptatibus. Error explicabo deleniti sapiente eos modi, nemo laboriosam, atque nesciunt similique cupiditate temporibus, soluta dolorum cum minima asperiores maiores debitis ratione! Quisquam, at. Cum at quidem deleniti eos, earum, omnis nemo modi ex odit, provident soluta possimus! Ullam necessitatibus nobis quibusdam aliquid. Expedita eligendi nostrum quisquam laborum voluptates perferendis dignissimos aut quis labore sunt illo magnam, sit impedit mollitia iure ullam, eaque tempora sapiente? Natus, saepe doloribus minus magnam itaque modi consequuntur. Facere atque nemo praesentium tenetur aliquam, delectus beatae! Doloremque architecto quasi amet recusandae aliquam cupiditate praesentium nesciunt veniam libero, blanditiis totam, earum ad nisi ea dolore ipsam nostrum nobis sapiente dolorem, dolores ratione a. Quod et animi odit, nesciunt id neque deserunt. Quasi commodi ullam libero amet ipsam incidunt aliquam quo earum nemo tenetur unde inventore consectetur eveniet et, minus ad doloremque eligendi labore. Dignissimos aspernatur, perferendis nemo repellat provident voluptate excepturi numquam quo. Ab vitae cupiditate quae dignissimos non esse ex reiciendis blanditiis delectus rerum hic fuga similique nostrum sequi assumenda ipsum labore, officiis animi voluptas nobis voluptate eius adipisci! Debitis omnis nihil laboriosam, quod quae aut ad facilis, voluptatum repellat velit aliquam harum hic beatae eos facere, mollitia ducimus consequatur corporis quidem recusandae sed possimus esse. Quos, deleniti sed? Id eum distinctio autem velit, tenetur maiores provident, assumenda aspernatur eos amet maxime at quisquam recusandae reiciendis sapiente cumque accusamus natus alias dolor libero repellendus? Nemo, libero fugit facilis quae maiores sint dolores qui. Ut deleniti voluptas eligendi repellat quae! Minima dolor laborum repellendus quod vero dolore quidem! Ex est animi similique a veniam quia corporis pariatur, expedita accusamus accusantium nesciunt cupiditate excepturi libero harum totam dolorem temporibus distinctio ad, itaque non vel. Labore quam earum delectus voluptatum eius corporis atque, repudiandae eaque, laborum facilis aliquam placeat esse accusamus amet perspiciatis, temporibus quo reprehenderit modi architecto error harum. Tempore illo exercitationem quasi repellendus. Amet nesciunt doloremque modi, necessitatibus harum aperiam molestiae iusto odio distinctio ducimus accusantium.</h1>
-                
+            <div data-aos="fade-down" data-aos-duration='3500'>
+                <HeaderTitle  heading={'Projects'}></HeaderTitle>
+            </div>
+            <div data-aos="fade-down" data-aos-duration='2000'>
+                <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 items-center gap-3">
+                    {
+                        projects?.map(project => (
+                            <div key={project?.id}>
+                                <div className="border-2 effect rounded-lg p-2 relative">
+                                    <img className="h-40 w-96 rounded-md hover:scale-105 ease-in-out duration-300 " src={project?.image_link} alt="" />
+                                    <div className="h-1/4 w-full text-white text-center p-2 font-semibold bg-gray-500 backdrop-blur-2xl bg-opacity-5 absolute rounded-b-lg bottom-0 left-0 right-0 z-10">
+                                        <div className="flex items-center justify-between px-2">
+                                            <div>
+                                                <h1>{project.project_name}</h1>
+                                            </div>
+                                            <div>
+                                                <Link to={project.project_link}>
+                                                    <FaCode className="font-semibold text-2xl"></FaCode>
+                                                </Link>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
             </div>
         </div>
     );

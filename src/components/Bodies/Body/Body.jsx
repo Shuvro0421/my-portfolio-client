@@ -8,7 +8,7 @@ const Body = () => {
   const [activeLink, setActiveLink] = useState(null);
   const homeRef = useRef(null);
   const projectsRef = useRef(null);
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
   const [isNavbarScrolled, setIsNavbarScrolled] = useState(false);
   const [isAtTop, setIsAtTop] = useState(true);
 
@@ -44,6 +44,15 @@ const Body = () => {
     };
   }, []);
 
+  useEffect(() => {
+    // Add or remove class to body based on drawer state
+    if (isOpen) {
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+    }
+  }, [isOpen]);
+
   const handleLinkClick = (index) => {
     setActiveLink(index);
 
@@ -57,8 +66,8 @@ const Body = () => {
   };
 
   const handleIsOpen = () => {
-    setIsOpen(!isOpen)
-  }
+    setIsOpen(!isOpen);
+  };
 
   const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -122,7 +131,7 @@ const Body = () => {
         {/* Scroll to Top Button */}
         <div>
           {!isAtTop && (
-            <div className="fixed bottom-4 right-4">
+            <div className="fixed bottom-4 z-10 right-4">
               <button
                 onClick={handleScrollToTop}
                 className=" md:text-2xl text-lg bg-opacity-65 md:p-3 p-2 rounded-full  bg-purple-500 text-gray-200   cursor-pointer"
@@ -157,3 +166,4 @@ const Body = () => {
 };
 
 export default Body;
+
