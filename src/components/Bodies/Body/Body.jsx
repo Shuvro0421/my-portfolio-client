@@ -3,11 +3,13 @@ import Home from '../Home/Home';
 import Projects from '../Projects/Projects';
 import { FaCaretLeft, FaCaretRight, FaCaretUp } from "react-icons/fa";
 import Footer from '../Footer/Footer';
+import SkillsMerged from '../Skills/SkillsMerged';
 
 const Body = () => {
   const [activeLink, setActiveLink] = useState(null);
   const homeRef = useRef(null);
   const projectsRef = useRef(null);
+  const skillsRef = useRef(null)
   const [isOpen, setIsOpen] = useState(false);
   const [isNavbarScrolled, setIsNavbarScrolled] = useState(false);
   const [isAtTop, setIsAtTop] = useState(true);
@@ -19,11 +21,14 @@ const Body = () => {
       // Check the scroll position and set the active link accordingly
       const homePosition = homeRef.current.offsetTop;
       const projectsPosition = projectsRef.current.offsetTop;
+      const skillsPosition = skillsRef.current.offsetTop;
 
       if (scrollPosition >= homePosition && scrollPosition < projectsPosition) {
         setActiveLink(0);
-      } else if (scrollPosition >= projectsPosition) {
+      } else if (scrollPosition >= projectsPosition && scrollPosition < skillsPosition) {
         setActiveLink(1);
+      } else if (scrollPosition >= skillsPosition) {
+        setActiveLink(2);
       } else {
         setActiveLink(null);
       }
@@ -61,6 +66,8 @@ const Body = () => {
       window.scrollTo({ top: homeRef.current.offsetTop, behavior: 'smooth' });
     } else if (index === 1) {
       window.scrollTo({ top: projectsRef.current.offsetTop, behavior: 'smooth' });
+    } else if (index === 2) {
+      window.scrollTo({ top: skillsRef.current.offsetTop, behavior: 'smooth' });
     }
     // Add more conditions for other sections as needed
   };
@@ -153,6 +160,9 @@ const Body = () => {
         {/* Projects */}
         <div className='md:pt-20 pt-10' ref={projectsRef}>
           <Projects />
+        </div>
+        <div className='md:pt-20 pt-10' ref={skillsRef}>
+          <SkillsMerged />
         </div>
         {/* Add more sections with refs as needed */}
       </div>

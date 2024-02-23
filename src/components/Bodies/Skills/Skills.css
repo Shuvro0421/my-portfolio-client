@@ -1,0 +1,17 @@
+.skill-bar {
+    width: 0%;
+    overflow: hidden; /* Ensure smooth clipping */
+}
+
+.skill-bar.visible {
+    animation: expand 1.5s ease-in-out forwards;
+}
+
+@keyframes expand {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: var(--bar-width);
+    }
+}
