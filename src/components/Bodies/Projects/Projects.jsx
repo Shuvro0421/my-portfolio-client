@@ -32,11 +32,11 @@ const Projects = () => {
                     {
                         projects?.map(project => (
                             <div key={project?.id}>
-                                <div className="border-2 effect rounded-lg p-2 relative">
-                                    <img className="h-40 w-96 rounded-md hover:scale-105 ease-in-out duration-300 " src={project?.image_link} alt="" />
+                                <div className=" effect rounded-lg p-2 relative">
+                                    <img className="h-40 w-96 rounded-md hover:scale-[102%] ease-in-out duration-300 " src={project?.image_link} alt="" />
                                     <div className="h-1/4 w-full text-white text-center p-2 font-semibold bg-gray-500 backdrop-blur-2xl bg-opacity-5 absolute rounded-b-md bottom-0 left-0 right-0 z-10">
                                         <div className="flex items-center justify-between px-2">
-                                            <div>
+                                            <div className="cursor-default">
                                                 <h1>{project.project_name}</h1>
                                             </div>
                                             <div>
