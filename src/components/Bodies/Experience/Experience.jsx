@@ -20,7 +20,7 @@ const Experience = () => {
 
     return (
         <div>
-            <div data-aos="fade-down" data-aos-duration='3500'>
+            <div data-aos="fade-down" data-aos-duration='3500' className='w-full md:w-[1200px] 2xl:w-[1400px] mx-auto px-10 md:px-0'>
                 <HeaderTitle heading={'Experience'}></HeaderTitle>
             </div>
             <div>

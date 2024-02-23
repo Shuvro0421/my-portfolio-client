@@ -102,7 +102,7 @@ const Body = () => {
 
       <div>
         {/* navbar lg , md */}
-        <div>
+        <div className=''>
           <ul className={`md:flex z-10 hidden items-center ${isNavbarScrolled ? 'bg-gray-500 bg-opacity-10 ease-in-out duration-300' : ''}  fixed top-0 backdrop-blur-md w-full justify-center p-5 gap-5  text-sm`}>
             {links.map((link, index) => (
               <li
@@ -143,7 +143,7 @@ const Body = () => {
         </div>
 
         {/* Scroll to Top Button */}
-        <div>
+        <div className=''>
           {!isAtTop && (
             <div className="fixed bottom-4 z-10 right-4">
               <button
@@ -160,16 +160,16 @@ const Body = () => {
       {/* Body */}
       <div className=' flex-1 mb-10'>
         {/* Home */}
-        <div className='md:pt-20 md:px-20 px-12 pt-10' ref={homeRef}>
+        <div className='md:pt-20 w-full md:w-[1200px] 2xl:w-[1400px] mx-auto px-10 md:px-0 pt-10' ref={homeRef}>
           <Home />
         </div>
 
         {/* Projects */}
-        <div className='md:pt-20 md:px-20 px-12 pt-10' ref={projectsRef}>
+        <div className='md:pt-20 w-full md:w-[1200px] 2xl:w-[1400px] mx-auto px-10 md:px-0 pt-10' ref={projectsRef}>
           <Projects />
         </div>
         {/* Skills */}
-        <div className='md:pt-20 md:px-20 px-12 pt-10' ref={skillsRef}>
+        <div className='md:pt-20 w-full md:w-[1200px] 2xl:w-[1400px] mx-auto px-10 md:px-0 pt-10' ref={skillsRef}>
           <SkillsMerged />
         </div>
         {/* Experience */}
@@ -179,7 +179,7 @@ const Body = () => {
         {/* Add more sections with refs as needed */}
       </div>
       {/* footer */}
-      <div>
+      <div className=''>
         <Footer></Footer>
       </div>
     </div>
