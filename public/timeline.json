@@ -1,0 +1,38 @@
+[
+  {
+    "id": 0,
+    "year": 2020,
+    "title": "Growth Hacker (Intern)",
+    "content": "INTROTUCE PRIVATE LIMITED",
+    "duration": "19 June to 19 September, 2020",
+    "description": "Managing campus ambassador in digital marketing of android and ios application named 'Nex2Me'",
+    "image": "https://i.ibb.co/pxFBrsz/9853.png"
+  },
+  {
+    "id": 1,
+    "year": 2021,
+    "title": "Co-founder of I.C.B",
+    "content": "BANGABANDHU SHEIKH MUJIB HI-TECH PARK",
+    "duration": "1 June to 1 September, 2021",
+    "description": "Co-founder of Internet Connected Button (I.C.B). Which is an home automation technology button. Connecting every devices with a single button and makes it functional",
+    "image": "https://i.ibb.co/5YTMSHx/i-c-b.png"
+  },
+  {
+    "id": 2,
+    "year": 2021,
+    "title": "Web Developer (Intern)",
+    "content": "SUFFIX IT LIMITED",
+    "duration": "1 December to 31 December, 2021",
+    "description": "Internship in web development using django and python and observing the office environment",
+    "image": "https://i.ibb.co/wrT7m19/download.png"
+  },
+  {
+    "id": 3,
+    "year": 2023,
+    "title": "Web Developer (Contractual)",
+    "content": "FACE OF ART TECHNOLOGIES",
+    "duration": "8 October 2023 to 8 December 2023",
+    "description": "Developing websites in react. Hired as a mern stack web developer",
+    "image": "https://i.ibb.co/sVb6vGz/face-of-art-technologies-ltd-2017-logo.jpg"
+  }
+]

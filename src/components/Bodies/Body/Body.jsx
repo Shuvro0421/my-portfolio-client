@@ -4,12 +4,14 @@ import Projects from '../Projects/Projects';
 import { FaCaretLeft, FaCaretRight, FaCaretUp } from "react-icons/fa";
 import Footer from '../Footer/Footer';
 import SkillsMerged from '../Skills/SkillsMerged';
+import Experience from '../Experience/Experience';
 
 const Body = () => {
   const [activeLink, setActiveLink] = useState(null);
   const homeRef = useRef(null);
   const projectsRef = useRef(null);
   const skillsRef = useRef(null)
+  const experienceRef = useRef(null)
   const [isOpen, setIsOpen] = useState(false);
   const [isNavbarScrolled, setIsNavbarScrolled] = useState(false);
   const [isAtTop, setIsAtTop] = useState(true);
@@ -22,13 +24,16 @@ const Body = () => {
       const homePosition = homeRef.current.offsetTop;
       const projectsPosition = projectsRef.current.offsetTop;
       const skillsPosition = skillsRef.current.offsetTop;
+      const experiencePosition = experienceRef.current.offsetTop;
 
       if (scrollPosition >= homePosition && scrollPosition < projectsPosition) {
         setActiveLink(0);
       } else if (scrollPosition >= projectsPosition && scrollPosition < skillsPosition) {
         setActiveLink(1);
-      } else if (scrollPosition >= skillsPosition) {
+      } else if (scrollPosition >= skillsPosition && scrollPosition < experiencePosition) {
         setActiveLink(2);
+      } else if (scrollPosition >= experiencePosition) {
+        setActiveLink(3);
       } else {
         setActiveLink(null);
       }
@@ -68,6 +73,8 @@ const Body = () => {
       window.scrollTo({ top: projectsRef.current.offsetTop, behavior: 'smooth' });
     } else if (index === 2) {
       window.scrollTo({ top: skillsRef.current.offsetTop, behavior: 'smooth' });
+    } else if (index === 3) {
+      window.scrollTo({ top: experienceRef.current.offsetTop, behavior: 'smooth' });
     }
     // Add more conditions for other sections as needed
   };
@@ -151,18 +158,23 @@ const Body = () => {
       </div>
 
       {/* Body */}
-      <div className='md:px-20 px-12 flex-1 mb-10'>
+      <div className=' flex-1 mb-10'>
         {/* Home */}
-        <div className='md:pt-20 pt-10' ref={homeRef}>
+        <div className='md:pt-20 md:px-20 px-12 pt-10' ref={homeRef}>
           <Home />
         </div>
 
         {/* Projects */}
-        <div className='md:pt-20 pt-10' ref={projectsRef}>
+        <div className='md:pt-20 md:px-20 px-12 pt-10' ref={projectsRef}>
           <Projects />
         </div>
-        <div className='md:pt-20 pt-10' ref={skillsRef}>
+        {/* Skills */}
+        <div className='md:pt-20 md:px-20 px-12 pt-10' ref={skillsRef}>
           <SkillsMerged />
+        </div>
+        {/* Experience */}
+        <div className='md:pt-20 pt-10' ref={experienceRef}>
+          <Experience />
         </div>
         {/* Add more sections with refs as needed */}
       </div>

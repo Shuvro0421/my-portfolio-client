@@ -31,7 +31,7 @@ const Skills = ({ bar = 0, skillName = 'None' }) => {
 
             <div
                 ref={skillRef}
-                className='w-full bg-gray-300 rounded-3xl'
+                className='w-full bg-gray-300 rounded-3xl text-xs'
             >
                 <div
                     className={`flex justify-between gap-5 effect p-2 text-white rounded-3xl skill-bar ${
