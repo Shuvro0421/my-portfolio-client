@@ -24,7 +24,7 @@ const Experience = () => {
                 <HeaderTitle heading={'Experience'}></HeaderTitle>
             </div>
             <div>
-                <ExperienceTimeline datas={datas} image={'https://assets-global.website-files.com/6160029329a3f681d23f91fc/65a2e386c5f42eb0508452d0_intro-purple.gif'} array={datas.length}></ExperienceTimeline>
+                <ExperienceTimeline datas={datas} image={'https://i.ibb.co/dJb2LFF/65a2e386c5f42eb0508452d0-intro-purple.gif'} array={datas.length}></ExperienceTimeline>
             </div>
         </div>
     );
