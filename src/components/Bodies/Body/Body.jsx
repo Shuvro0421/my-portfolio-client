@@ -6,6 +6,7 @@ import Footer from '../Footer/Footer';
 import SkillsMerged from '../Skills/SkillsMerged';
 import Experience from '../Experience/Experience';
 import Achievements from '../Achievements/Achievements';
+import Education from '../Education/Education';
 
 const Body = () => {
   const [activeLink, setActiveLink] = useState(null);
@@ -13,7 +14,8 @@ const Body = () => {
   const projectsRef = useRef(null);
   const skillsRef = useRef(null);
   const experienceRef = useRef(null);
-  const achievementsRef = useRef(null); // New ref for Achievements component
+  const achievementsRef = useRef(null); 
+  const educationRef = useRef(null); // New ref for Education component
   const [isOpen, setIsOpen] = useState(false);
   const [isNavbarScrolled, setIsNavbarScrolled] = useState(false);
   const [isAtTop, setIsAtTop] = useState(true);
@@ -27,7 +29,8 @@ const Body = () => {
       const projectsPosition = projectsRef.current.offsetTop;
       const skillsPosition = skillsRef.current.offsetTop;
       const experiencePosition = experienceRef.current.offsetTop;
-      const achievementsPosition = achievementsRef.current.offsetTop; // Update with Achievements position
+      const achievementsPosition = achievementsRef.current.offsetTop; 
+      const educationPosition = educationRef.current.offsetTop; // Update with Education position
 
       if (scrollPosition >= homePosition && scrollPosition < projectsPosition) {
         setActiveLink(0);
@@ -37,8 +40,10 @@ const Body = () => {
         setActiveLink(2);
       } else if (scrollPosition >= experiencePosition && scrollPosition < achievementsPosition) {
         setActiveLink(3);
-      } else if (scrollPosition >= achievementsPosition) {
+      } else if (scrollPosition >= achievementsPosition && scrollPosition < educationPosition) {
         setActiveLink(4);
+      } else if (scrollPosition >= educationPosition) {
+        setActiveLink(5);
       } else {
         setActiveLink(null);
       }
@@ -82,6 +87,8 @@ const Body = () => {
       window.scrollTo({ top: experienceRef.current.offsetTop, behavior: 'smooth' });
     } else if (index === 4) {
       window.scrollTo({ top: achievementsRef.current.offsetTop, behavior: 'smooth' });
+    } else if (index === 5) {
+      window.scrollTo({ top: educationRef.current.offsetTop, behavior: 'smooth' });
     }
     // Add more conditions for other sections as needed
   };
@@ -186,6 +193,10 @@ const Body = () => {
         {/* Achievements */}
         <div className='' ref={achievementsRef}>
           <Achievements />
+        </div>
+        {/* Education */}
+        <div className='md:pt-20 w-full lg:w-[1200px] 2xl:w-[1400px] mx-auto px-10 md:px-0 pt-10' ref={educationRef}>
+          <Education />
         </div>
         {/* Add more sections with refs as needed */}
       </div>
