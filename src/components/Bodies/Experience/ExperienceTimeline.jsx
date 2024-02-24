@@ -75,12 +75,12 @@ const ExperienceTimeline = ({ image, datas, array }) => {
                 id="timeline"
                 className="bg-fixed overflow-hidden"
                 style={{
-                    backgroundImage: `url(${image})`
+                    backgroundImage: `url(${image})`,
                     
                 }}
 
             >
-                <ul className="w-full md:w-[1200px] 2xl:w-[1400px] mx-auto px-10 md:px-0">
+                <ul className="w-full lg:w-[1200px] 2xl:w-[1400px] mx-auto px-10 md:px-0">
                     {timelineData?.map((item, index) => (
                         <li key={index} className="relative">
                             <div className=" border-4 bg-white border-purple-500 w-9 h-9 absolute rounded-full -left-[13px]">

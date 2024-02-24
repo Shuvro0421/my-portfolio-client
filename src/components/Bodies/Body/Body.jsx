@@ -5,26 +5,29 @@ import { FaCaretLeft, FaCaretRight, FaCaretUp } from "react-icons/fa";
 import Footer from '../Footer/Footer';
 import SkillsMerged from '../Skills/SkillsMerged';
 import Experience from '../Experience/Experience';
+import Achievements from '../Achievements/Achievements';
 
 const Body = () => {
   const [activeLink, setActiveLink] = useState(null);
   const homeRef = useRef(null);
   const projectsRef = useRef(null);
-  const skillsRef = useRef(null)
-  const experienceRef = useRef(null)
+  const skillsRef = useRef(null);
+  const experienceRef = useRef(null);
+  const achievementsRef = useRef(null); // New ref for Achievements component
   const [isOpen, setIsOpen] = useState(false);
   const [isNavbarScrolled, setIsNavbarScrolled] = useState(false);
   const [isAtTop, setIsAtTop] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
+      const scrollPosition = window.scrollY + 50;
 
       // Check the scroll position and set the active link accordingly
       const homePosition = homeRef.current.offsetTop;
       const projectsPosition = projectsRef.current.offsetTop;
       const skillsPosition = skillsRef.current.offsetTop;
       const experiencePosition = experienceRef.current.offsetTop;
+      const achievementsPosition = achievementsRef.current.offsetTop; // Update with Achievements position
 
       if (scrollPosition >= homePosition && scrollPosition < projectsPosition) {
         setActiveLink(0);
@@ -32,8 +35,10 @@ const Body = () => {
         setActiveLink(1);
       } else if (scrollPosition >= skillsPosition && scrollPosition < experiencePosition) {
         setActiveLink(2);
-      } else if (scrollPosition >= experiencePosition) {
+      } else if (scrollPosition >= experiencePosition && scrollPosition < achievementsPosition) {
         setActiveLink(3);
+      } else if (scrollPosition >= achievementsPosition) {
+        setActiveLink(4);
       } else {
         setActiveLink(null);
       }
@@ -75,6 +80,8 @@ const Body = () => {
       window.scrollTo({ top: skillsRef.current.offsetTop, behavior: 'smooth' });
     } else if (index === 3) {
       window.scrollTo({ top: experienceRef.current.offsetTop, behavior: 'smooth' });
+    } else if (index === 4) {
+      window.scrollTo({ top: achievementsRef.current.offsetTop, behavior: 'smooth' });
     }
     // Add more conditions for other sections as needed
   };
@@ -148,7 +155,7 @@ const Body = () => {
             <div className="fixed bottom-4 z-10 right-4">
               <button
                 onClick={handleScrollToTop}
-                className=" md:text-2xl text-lg bg-opacity-65 md:p-3 p-2 rounded-full  bg-purple-500 text-gray-200   cursor-pointer"
+                className=" md:text-2xl text-lg bg-opacity-65 md:p-3 p-2 rounded-full  effect text-gray-200   cursor-pointer"
               >
                 <FaCaretUp></FaCaretUp>
               </button>
@@ -160,21 +167,25 @@ const Body = () => {
       {/* Body */}
       <div className=' flex-1 mb-10'>
         {/* Home */}
-        <div className='md:pt-20 w-full md:w-[1200px] 2xl:w-[1400px] mx-auto px-10 md:px-0 pt-10' ref={homeRef}>
+        <div className='md:pt-20 w-full lg:w-[1200px] 2xl:w-[1400px] mx-auto px-10 md:px-0 pt-10' ref={homeRef}>
           <Home />
         </div>
 
         {/* Projects */}
-        <div className='md:pt-20 w-full md:w-[1200px] 2xl:w-[1400px] mx-auto px-10 md:px-0 pt-10' ref={projectsRef}>
+        <div className='md:pt-20 w-full lg:w-[1200px] 2xl:w-[1400px] mx-auto px-10 md:px-0 pt-10' ref={projectsRef}>
           <Projects />
         </div>
         {/* Skills */}
-        <div className='md:pt-20 w-full md:w-[1200px] 2xl:w-[1400px] mx-auto px-10 md:px-0 pt-10' ref={skillsRef}>
+        <div className='md:pt-20 w-full lg:w-[1200px] 2xl:w-[1400px] mx-auto px-10 md:px-0 pt-10' ref={skillsRef}>
           <SkillsMerged />
         </div>
         {/* Experience */}
         <div className='md:pt-20 pt-10' ref={experienceRef}>
           <Experience />
+        </div>
+        {/* Achievements */}
+        <div className='md:pt-20 w-full lg:w-[1200px] 2xl:w-[1400px] mx-auto px-10 md:px-0 pt-10' ref={achievementsRef}>
+          <Achievements />
         </div>
         {/* Add more sections with refs as needed */}
       </div>
@@ -188,4 +199,3 @@ const Body = () => {
 };
 
 export default Body;
-

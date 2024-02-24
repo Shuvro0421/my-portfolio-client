@@ -1,0 +1,51 @@
+  
+  .card {
+    height: 25rem;
+    width: 20rem;
+    perspective: 100rem;
+    position: relative;
+    margin: auto;
+  }
+  
+  .card__side {
+    height: 100%;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 700ms ease;
+    backface-visibility: hidden;
+  }
+  
+  .card__side--front {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #8B5CF6, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+  
+  .card__side--back {
+    background: linear-gradient(-45deg, #ff3c01, #ff0062, #4c00ff, #00ffc3);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    transform: rotateY(180deg);
+  }
+  
+  .card:hover .card__side--front {
+    transform: rotateY(-180deg);
+  }
+  
+  .card:hover .card__side--back {
+    transform: rotateY(0);
+  }
+
+  .effect {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #8B5CF6, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+  
