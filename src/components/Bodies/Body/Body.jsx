@@ -7,6 +7,7 @@ import SkillsMerged from '../Skills/SkillsMerged';
 import Experience from '../Experience/Experience';
 import Achievements from '../Achievements/Achievements';
 import Education from '../Education/Education';
+import ContactMe from '../ContactMe/ContactMe';
 
 const Body = () => {
   const [activeLink, setActiveLink] = useState(null);
@@ -14,8 +15,9 @@ const Body = () => {
   const projectsRef = useRef(null);
   const skillsRef = useRef(null);
   const experienceRef = useRef(null);
-  const achievementsRef = useRef(null); 
-  const educationRef = useRef(null); // New ref for Education component
+  const achievementsRef = useRef(null);
+  const educationRef = useRef(null);
+  const contactMeRef = useRef(null); // Adding ref for ContactMe component
   const [isOpen, setIsOpen] = useState(false);
   const [isNavbarScrolled, setIsNavbarScrolled] = useState(false);
   const [isAtTop, setIsAtTop] = useState(true);
@@ -29,8 +31,9 @@ const Body = () => {
       const projectsPosition = projectsRef.current.offsetTop;
       const skillsPosition = skillsRef.current.offsetTop;
       const experiencePosition = experienceRef.current.offsetTop;
-      const achievementsPosition = achievementsRef.current.offsetTop; 
-      const educationPosition = educationRef.current.offsetTop; // Update with Education position
+      const achievementsPosition = achievementsRef.current.offsetTop;
+      const educationPosition = educationRef.current.offsetTop;
+      const contactMePosition = contactMeRef.current.offsetTop; // Update with ContactMe position
 
       if (scrollPosition >= homePosition && scrollPosition < projectsPosition) {
         setActiveLink(0);
@@ -42,8 +45,10 @@ const Body = () => {
         setActiveLink(3);
       } else if (scrollPosition >= achievementsPosition && scrollPosition < educationPosition) {
         setActiveLink(4);
-      } else if (scrollPosition >= educationPosition) {
+      } else if (scrollPosition >= educationPosition && scrollPosition < contactMePosition) {
         setActiveLink(5);
+      } else if (scrollPosition >= contactMePosition) {
+        setActiveLink(6);
       } else {
         setActiveLink(null);
       }
@@ -89,6 +94,8 @@ const Body = () => {
       window.scrollTo({ top: achievementsRef.current.offsetTop, behavior: 'smooth' });
     } else if (index === 5) {
       window.scrollTo({ top: educationRef.current.offsetTop, behavior: 'smooth' });
+    } else if (index === 6) {
+      window.scrollTo({ top: contactMeRef.current.offsetTop, behavior: 'smooth' });
     }
     // Add more conditions for other sections as needed
   };
@@ -108,7 +115,7 @@ const Body = () => {
     'Experience',
     'Achievements',
     'Education',
-    'About Me'
+    'Contact Me'
   ];
 
   return (
@@ -122,7 +129,7 @@ const Body = () => {
               <li
                 key={index}
                 onClick={() => handleLinkClick(index)}
-                className={activeLink === index ? 'text-purple-500 cursor-pointer ' : 'cursor-pointer'}
+                className={activeLink === index ? 'text-purple-500 cursor-pointer ' : 'cursor-pointer active:scale-95 hover:scale-110  transition-transform ease-in-out duration-150'}
               >
                 {link}
               </li>
@@ -146,7 +153,7 @@ const Body = () => {
                   <li
                     key={index}
                     onClick={() => handleLinkClick(index)}
-                    className={activeLink === index ? 'text-purple-500 cursor-pointer' : 'cursor-pointer'}
+                    className={activeLink === index ? 'text-purple-500 cursor-pointer' : 'cursor-pointer active:scale-95 hover:scale-110  transition-transform ease-in-out duration-150'}
                   >
                     {link}
                   </li>
@@ -162,7 +169,7 @@ const Body = () => {
             <div className="fixed bottom-4 z-10 right-4">
               <button
                 onClick={handleScrollToTop}
-                className=" md:text-2xl text-lg bg-opacity-65 md:p-3 p-2 rounded-full  effect text-gray-200   cursor-pointer"
+                className=" md:text-2xl text-lg bg-opacity-65 md:p-3 p-2 rounded-full  effect text-gray-200   cursor-pointer active:scale-95 hover:scale-105  transition-transform ease-in-out duration-150"
               >
                 <FaCaretUp></FaCaretUp>
               </button>
@@ -197,6 +204,10 @@ const Body = () => {
         {/* Education */}
         <div className='md:pt-20 w-full lg:w-[1200px] 2xl:w-[1400px] mx-auto px-10 md:px-0 pt-10' ref={educationRef}>
           <Education />
+        </div>
+        {/* Contact Me */}
+        <div className='md:pt-20 w-full lg:w-[1200px] 2xl:w-[1400px] mx-auto px-10 md:px-0 pt-10' ref={contactMeRef}>
+          <ContactMe />
         </div>
         {/* Add more sections with refs as needed */}
       </div>

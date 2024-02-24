@@ -7,7 +7,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 const Achievements = () => {
-
+    
     const [achievements, setAchievements] = useState([])
     useEffect(() => {
         fetch('/achievement.json')

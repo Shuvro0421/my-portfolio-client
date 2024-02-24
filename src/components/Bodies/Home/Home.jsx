@@ -46,19 +46,19 @@ const Home = () => {
                 <h1 className='text-justify mt-5'>Dynamic and dedicated web developer proficient in front-end and back-end technologies, adept at creating robust, user-friendly websites. Experienced in HTML, CSS, JavaScript, and various frameworks such as React and Angular. Skilled in database management with MySQL and MongoDB. Possess a strong understanding of UI/UX principles and responsive design. Proven track record of collaborating effectively with cross-functional teams to deliver projects on time and within budget. Continuously learning and adapting to emerging technologies and industry trends. Committed to producing high-quality code that meets both client requirements and industry standards. Eager to contribute to innovative projects and drive impactful results.</h1>
                 <div data-aos="fade-down" data-aos-duration='2000' className='flex flex-col'>
                     <div className='flex gap-3 my-5'>
-                        <Link to="https://github.com/Shuvro0421">
+                        <Link target='_blank' className='hover:scale-105 active:scale-95 transition-transform ease-in-out duration-200' to="https://github.com/Shuvro0421">
                             <FaGithub className='text-2xl text-purple-500'></FaGithub>
                         </Link>
-                        <Link to={`https://linkedin.com/in/adib-arman-shuvro-085a701b9`}>
-                            <FaLinkedin className='text-2xl text-purple-500'></FaLinkedin>
+                        <Link target='_blank' className='hover:scale-105 active:scale-95 transition-transform ease-in-out duration-200' to={`https://linkedin.com/in/adib-arman-shuvro-085a701b9`}>
+                            <FaLinkedin  className='text-2xl text-purple-500'></FaLinkedin>
                         </Link>
 
                     </div>
                     <div className='flex md:flex-row flex-col  md:items-center items-start gap-5 justify-between'>
-                        <button className='bg-purple-500 text-white text-center p-3 rounded-lg' onClick={downloadResume}>
+                        <button className='effect active:scale-95 hover:scale-105  transition-transform ease-in-out duration-150 text-white text-center p-3 rounded-lg' onClick={downloadResume}>
                             Download Resume
                         </button>
-                        <Link to={'tel:+8801767739907'}>Contact: +8801767739907</Link>
+                        <Link className='text-purple-500 active:scale-95 transition-transform font-semibold hover:scale-105 ease-in-out duration-200' to={'tel:+8801767739907'}>Contact: +8801767739907</Link>
 
                     </div>
                 </div>

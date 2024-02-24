@@ -40,8 +40,8 @@ const Projects = () => {
                                                 <h1>{project.project_name}</h1>
                                             </div>
                                             <div>
-                                                <Link to={project.project_link}>
-                                                    <FaCode className="font-semibold text-2xl"></FaCode>
+                                                <Link to={project.project_link} target="_blank">
+                                                    <FaCode className="font-semibold text-2xl active:scale-95 hover:scale-110  transition-transform ease-in-out duration-150"></FaCode>
                                                 </Link>
                                             </div>
                                         </div>
