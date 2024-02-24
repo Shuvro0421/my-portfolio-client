@@ -184,7 +184,7 @@ const Body = () => {
           <Experience />
         </div>
         {/* Achievements */}
-        <div className='md:pt-20 w-full lg:w-[1200px] 2xl:w-[1400px] mx-auto px-10 md:px-0 pt-10' ref={achievementsRef}>
+        <div className='' ref={achievementsRef}>
           <Achievements />
         </div>
         {/* Add more sections with refs as needed */}
