@@ -13,7 +13,7 @@ const Home = () => {
         // Create a link element
         const link = document.createElement('a');
         link.href = MyPdf; // Set the href to your PDF file
-        link.download = 'myResume.pdf'; // Change the file name as needed
+        link.download = 'Adib_Resume.pdf'; // Change the file name as needed
 
         // Append the link to the document body
         document.body.appendChild(link);
