@@ -129,7 +129,7 @@ const Body = () => {
               <li
                 key={index}
                 onClick={() => handleLinkClick(index)}
-                className={activeLink === index ? 'text-purple-500 cursor-pointer ' : 'cursor-pointer active:scale-95 hover:scale-110  transition-transform ease-in-out duration-150'}
+                className={activeLink === index ? 'effect-text cursor-pointer ' : 'cursor-pointer active:scale-95 hover:scale-110  transition-transform ease-in-out duration-150'}
               >
                 {link}
               </li>
@@ -153,7 +153,7 @@ const Body = () => {
                   <li
                     key={index}
                     onClick={() => handleLinkClick(index)}
-                    className={activeLink === index ? 'text-purple-500 cursor-pointer' : 'cursor-pointer active:scale-95 hover:scale-110  transition-transform ease-in-out duration-150'}
+                    className={activeLink === index ? 'effect-text cursor-pointer' : 'cursor-pointer active:scale-95 hover:scale-110  transition-transform ease-in-out duration-150'}
                   >
                     {link}
                   </li>
@@ -169,7 +169,7 @@ const Body = () => {
             <div className="fixed bottom-4 z-10 right-4">
               <button
                 onClick={handleScrollToTop}
-                className=" md:text-2xl text-lg bg-opacity-65 md:p-3 p-2 rounded-full  effect text-gray-200   cursor-pointer active:scale-95 hover:scale-105  transition-transform ease-in-out duration-150"
+                className=" md:text-2xl text-lg bg-opacity-65 md:p-3 p-2 rounded-full  effect text-gray-200   cursor-pointer active:scale-95 hover:scale-1  transition-transform ease-in-out duration-150"
               >
                 <FaCaretUp></FaCaretUp>
               </button>

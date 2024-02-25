@@ -1,65 +1,107 @@
 [
-    {
-        "id":1,
-        "type": "Website",
-        "project_name": "Fruit Burst",
-        "project_link": "https://64c16d5ce98dcf0085c0daf0--superb-lokum-678270.netlify.app/",
-        "image_link": "https://i.ibb.co/545kxRy/Screenshot-199.png"
-    },
-    {
-        "id":2,
-        "type": "Website",
-        "project_name": "Summer Sale",
-        "project_link": "https://summer-sale-004.netlify.app/",
-        "image_link": "https://i.ibb.co/XXbk4kt/Screenshot-200.png"
-    },
-    {
-        "id":3,
-        "type": "Website",
-        "project_name": "PH Tube",
-        "project_link": "https://64f20a0c9b80a407a15e8b6e--cosmic-pie-f8e49b.netlify.app/",
-        "image_link": "https://i.ibb.co/6DMVBJS/Screenshot-201.png"
-    },
-    {
-        "id":4,
-        "type": "Website",
-        "project_name": "Course Registration",
-        "project_link": "https://sore-peace.surge.sh/",
-        "image_link": "https://i.ibb.co/pbs39GT/Screenshot-202.png"
-    },
-    {
-        "id":5,
-        "type": "Website",
-        "project_name": "Donation Campaign",
-        "project_link": "https://6511c97af2bb74009727035c--ornate-swan-53fe33.netlify.app/",
-        "image_link": "https://i.ibb.co/5Rp3TmV/Screenshot-203.png"
-    },
-    {
-        "id":6,
-        "type": "Website",
-        "project_name": "Saitama Event Corporation",
-        "project_link": "https://saitama-event-corporation.web.app/",
-        "image_link": "https://i.ibb.co/9TVc2Nv/Screenshot-204.png"
-    },
-    {
-        "id":7,
-        "type": "Website",
-        "project_name": "All Phones Brand",
-        "project_link": "https://all-phones-brand-auth.web.app/",
-        "image_link": "https://i.ibb.co/Wn1fXdQ/Screenshot-205.png"
-    },
-    {
-        "id":8,
-        "type": "Website",
-        "project_name": "I Got The Job",
-        "project_link": "https://i-got-the-job-auth.web.app/",
-        "image_link": "https://i.ibb.co/WB5h5QH/Screenshot-206.png"
-    },
-    {
-        "id":9,
-        "type": "Website",
-        "project_name": "Hostel Meal Management",
-        "project_link": "https://hostel-meal-management-auth.web.app/",
-        "image_link": "https://i.ibb.co/brpcJ4t/Screenshot-207.png"
-    }
+  {
+    "id": 1,
+    "type": "Website",
+    "project_name": "Fruit Burst",
+    "project_link": "https://64c16d5ce98dcf0085c0daf0--superb-lokum-678270.netlify.app/",
+    "image_link": "https://i.ibb.co/545kxRy/Screenshot-199.png"
+  },
+  {
+    "id": 2,
+    "type": "Website",
+    "project_name": "Summer Sale",
+    "project_link": "https://summer-sale-004.netlify.app/",
+    "image_link": "https://i.ibb.co/XXbk4kt/Screenshot-200.png"
+  },
+  {
+    "id": 3,
+    "type": "Website",
+    "project_name": "PH Tube",
+    "project_link": "https://64f20a0c9b80a407a15e8b6e--cosmic-pie-f8e49b.netlify.app/",
+    "image_link": "https://i.ibb.co/6DMVBJS/Screenshot-201.png"
+  },
+  {
+    "id": 4,
+    "type": "Website",
+    "project_name": "Course Registration",
+    "project_link": "https://sore-peace.surge.sh/",
+    "image_link": "https://i.ibb.co/pbs39GT/Screenshot-202.png"
+  },
+  {
+    "id": 5,
+    "type": "Website",
+    "project_name": "Donation Campaign",
+    "project_link": "https://6511c97af2bb74009727035c--ornate-swan-53fe33.netlify.app/",
+    "image_link": "https://i.ibb.co/5Rp3TmV/Screenshot-203.png"
+  },
+  {
+    "id": 6,
+    "type": "Website",
+    "project_name": "Saitama Event Corporation",
+    "project_link": "https://saitama-event-corporation.web.app/",
+    "image_link": "https://i.ibb.co/9TVc2Nv/Screenshot-204.png"
+  },
+  {
+    "id": 7,
+    "type": "Website",
+    "project_name": "All Phones Brand",
+    "project_link": "https://all-phones-brand-auth.web.app/",
+    "image_link": "https://i.ibb.co/Wn1fXdQ/Screenshot-205.png"
+  },
+  {
+    "id": 8,
+    "type": "Website",
+    "project_name": "I Got The Job",
+    "project_link": "https://i-got-the-job-auth.web.app/",
+    "image_link": "https://i.ibb.co/WB5h5QH/Screenshot-206.png"
+  },
+  {
+    "id": 9,
+    "type": "Website",
+    "project_name": "Hostel Meal Management",
+    "project_link": "https://hostel-meal-management-auth.web.app/",
+    "image_link": "https://i.ibb.co/brpcJ4t/Screenshot-207.png"
+  },
+  {
+    "id": 10,
+    "type": "AI",
+    "project_name": "Face Attendance System",
+    "github_link": "https://github.com/Shuvro0421/Face_Attendance2",
+    "image_link": "https://i.ibb.co/ScdwVXs/a-robot-and-stack-of-papers-in-flat-illustration-style-with-gradients-and-white-background-compresse.webp"
+  },
+  {
+    "id": 11,
+    "type": "AI",
+    "project_name": "Road Safety",
+    "github_link": "https://github.com/Shuvro0421/Road_safety",
+    "image_link": "https://i.ibb.co/ScdwVXs/a-robot-and-stack-of-papers-in-flat-illustration-style-with-gradients-and-white-background-compresse.webp"
+  },
+  {
+    "id": 12,
+    "type": "AI",
+    "project_name": "Blank Eyes",
+    "github_link": "https://github.com/Shuvro0421/Blank_eyes2",
+    "image_link": "https://i.ibb.co/ScdwVXs/a-robot-and-stack-of-papers-in-flat-illustration-style-with-gradients-and-white-background-compresse.webp"
+  },
+  {
+    "id": 13,
+    "type": "AI",
+    "project_name": "NFT Generator",
+    "github_link": "https://github.com/Shuvro0421/nft_generator",
+    "image_link": "https://i.ibb.co/ScdwVXs/a-robot-and-stack-of-papers-in-flat-illustration-style-with-gradients-and-white-background-compresse.webp"
+  },
+  {
+    "id": 14,
+    "type": "AI",
+    "project_name": "Car Number Plate Detection",
+    "github_link": "https://github.com/Shuvro0421/Car_Number_Plate_Detection",
+    "image_link": "https://i.ibb.co/ScdwVXs/a-robot-and-stack-of-papers-in-flat-illustration-style-with-gradients-and-white-background-compresse.webp"
+  },
+  {
+    "id": 15,
+    "type": "Design",
+    "project_name": "All the Illustrations",
+    "github_link": "https://github.com/Shuvro0421/Designs",
+    "image_link": "https://i.ibb.co/FY4RM5n/sunset-silhouettes-trees-mountains-generative-ai-169016-29371.jpg"
+  }
 ]
