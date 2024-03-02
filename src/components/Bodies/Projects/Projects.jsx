@@ -10,7 +10,7 @@ import './Projects.css'
 const Projects = () => {
     const [projects, setProjects] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [projectsPerPage] = useState(8); // Adjust as needed
+    const [projectsPerPage] = useState(4); // Adjust as needed
     const [selectedType, setSelectedType] = useState("all"); // Default to show all projects
     const [animate, setAnimate] = useState(true); // State to control animation
 
