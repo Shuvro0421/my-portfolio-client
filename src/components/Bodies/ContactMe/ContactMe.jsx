@@ -62,7 +62,7 @@ const ContactMe = () => {
                             <textarea value={message} onChange={(e) => setMessage(e.target.value)} className="mt-1 block w-full rounded-md outline-none p-2 border-2 border-transparent border-b-purple-500 " />
                         </div>
                         <div>
-                            <button type="submit" className="w-full effect active:scale-95 ease-in-out duration-200 transition-transform text-white py-2 px-4 rounded-md ">Submit</button>
+                            <button type="submit" className="w-full effect active:scale-95 ease-in-out duration-200 transition-transform text-white py-2 px-4 rounded-md ">Send Email</button>
                         </div>
                     </form>
                     {isMessageSent && <div className="mt-4 text-purple-500">Message sent successfully!</div>}
