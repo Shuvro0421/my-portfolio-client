@@ -11,7 +11,7 @@ const Home = () => {
     const downloadResume = () => {
         // Create a link element
         const link = document.createElement('a');
-        link.href = './Adib_Resume.pdf'; // Set the href to your PDF file
+        link.href = 'https://indigo-hester-81.tiiny.site'; // Set the href to your PDF file
         link.download = 'Adib_Resume.pdf'; // Change the file name as needed
 
         // Append the link to the document body
