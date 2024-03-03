@@ -4,7 +4,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { useEffect } from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa6';
-import MyPdf from './Md-Adib-Arman-Shuvro.pdf'; // Import your PDF file
+import MyPdf from './Adib_Resume.pdf'; // Import your PDF file
 import { Link } from 'react-router-dom';
 
 const Home = () => {
