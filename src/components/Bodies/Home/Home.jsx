@@ -4,7 +4,6 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { useEffect } from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa6';
-import MyPdf from './Adib_Resume.pdf'; // Import your PDF file
 import { Link } from 'react-router-dom';
 
 const Home = () => {
@@ -12,7 +11,7 @@ const Home = () => {
     const downloadResume = () => {
         // Create a link element
         const link = document.createElement('a');
-        link.href = MyPdf; // Set the href to your PDF file
+        link.href = './Adib_Resume.pdf'; // Set the href to your PDF file
         link.download = 'Adib_Resume.pdf'; // Change the file name as needed
 
         // Append the link to the document body
