@@ -39,7 +39,7 @@ const Education = () => {
             <div data-aos="fade-down" data-aos-duration='2000' className='grid md:grid-cols-2 grid-cols-1 gap-5'>
                 {educationData.map((education, index) => (
                     <div key={index} className='relative mx-5 my-5'>
-                        <div className='flex bg-white  h-56 translate-x-3 -translate-y-3 hover:-translate-x-0 hover:-translate-y-0 ease-in-out duration-200 flex-col gap-2 shadow-2xl p-5 rounded-lg'>
+                        <div className='flex bg-white  md:h-56 translate-x-3 -translate-y-3 hover:-translate-x-0 hover:-translate-y-0 ease-in-out duration-200 flex-col gap-2 shadow-2xl p-5 rounded-lg'>
                             <div>
                                 <h1 className='text-2xl effect-text'>{education.degree}</h1>
                             </div>

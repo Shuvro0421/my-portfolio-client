@@ -31,7 +31,7 @@ const Achievements = () => {
                 <div data-aos="fade-down" data-aos-duration='3500' className='md:pt-16 w-full lg:w-[1200px] 2xl:w-[1400px] mx-auto px-10 md:px-0 pt-10'>
                     <HeaderTitle heading={'Achievements'} white={true}></HeaderTitle>
                 </div>
-                <div data-aos="fade-down" data-aos-duration='2000' className='grid md:grid-cols-2 lg:grid-cols-4  md:pb-20 w-full lg:w-[1200px] 2xl:w-[1400px] mx-auto px-10 md:px-0 pb-10  grid-cols-1 items-center justify-center gap-5'>
+                <div data-aos="fade-down" data-aos-duration='2000' className='grid md:grid-cols-2 lg:grid-cols-4  md:pb-20 w-full lg:w-[1400px] 2xl:w-[1400px] mx-auto px-10 md:px-0 pb-10  grid-cols-1 items-center justify-center gap-5'>
                     {
                         achievements?.map(achievement => (
                             <div key={achievement?.id} className="card cursor-default">
